@@ -7,6 +7,8 @@ const PORT = 3000;
 app.use(bodyParser.urlencoded({extenden : true}));
 app.set("view engine", "ejs");
 
+app.use(express.static(__dirname + '/public'));
+
 app.get("/", function(req, res){
     res.render("blog");
 })
