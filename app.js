@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({extenden : true}));
 app.set("view engine", "ejs");
 
 app.get("/", function(req, res){
-    res.render();
+    res.render("blog");
 })
 
 app.listen(PORT, function(){
