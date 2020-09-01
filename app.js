@@ -10,7 +10,7 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
 
 app.get("/", function(req, res){
-    res.render("blog");
+    res.render("home");
 })
 
 app.listen(PORT, function(){
