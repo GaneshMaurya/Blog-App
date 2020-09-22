@@ -40,8 +40,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 .card-group {
-    padding: 4px;
     margin: auto;
+    border-color: #000000;
+    border-style: solid;
 }
 
 .bg-custom-card {
