@@ -9,7 +9,7 @@ body {
     margin: 0;
     font-family: Josefin Sans;
     font-weight: 600;
-    background-color: #93E2D5;
+    background-color: #ccffcc;
 }
 
 body::-webkit-scrollbar {
@@ -40,4 +40,10 @@ a {
 a:hover {
     color: #004c66;
     opacity: 0.7;
+}
+
+img {
+    border: solid;
+    border-color: #000000;
+    margin: 4px;
 }
