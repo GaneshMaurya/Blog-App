@@ -1,0 +1,37 @@
+<%- include('partials/header') -%>
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/show.css">
+
+<div class="container">
+    <div class="box">
+        <h1><%=post.name%></h1>
+        <br>
+        <img src="<%= post.image %>">
+        <br>
+        <br>
+        <p><%= post.description %></p>    
+    </div> 
+</div>
+
+    <div class="section2" id="contact">
+    <br>    
+    <div class="container">
+        <h2 class="contact">Contact</h2>
+        <p>G V Ganesh Maurya - gvgmaurya@gmail.com</p>
+        <a href="https://www.facebook.com/ganesh.maurya.353250/" class="social-list">
+            <i class="fab fa-facebook-square"> </i>
+        </a>
+        <a href="https://www.instagram.com/maurya_2308/" class="social-list">
+            <i class="fab fa-instagram"> </i>
+        </a>
+        <a href="https://www.linkedin.com/in/g-v-ganesh-maurya-7a8a101a6/" class="social-list">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/GaneshMaurya" class="social-list">
+            <i class="fab fa-github"> </i>
+        </a>
+    </div>
+    <br>
+    </div>
+
+<%- include('partials/footer') -%>

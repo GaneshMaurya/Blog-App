@@ -57,7 +57,7 @@ app.post("/posts", function(req, res) {
     var image = req.body.image;
     var description = req.body.description;
     var newPost = {name : name, image : image, description : description};
-    
+
     Post.create(newPost, function(err,  newlyCreated){
         if (err){
             console.log(err);
@@ -74,6 +74,16 @@ app.get("/posts/new", function(req, res) {
 });
 
 // SHOW - Shows more information about the blog posts
+app.get("/posts/:id", function(req, res){
+    Post.findById(req.params.id, function(err, foundPost){
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.render("show", {post: foundPost});
+        }
+    });
+});
 
 app.listen(PORT, function(){
     console.log("Welcome to my blog app server.");
