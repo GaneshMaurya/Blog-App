@@ -12,6 +12,13 @@ var posts = [
     {name: "Derby at the Ethihad", image: "https://images.unsplash.com/photo-1555862124-94036092ab14?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"}
 ];
 
+mongoose.connect('mongodb://localhost/blog_app', {useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connection.once('open', function(){
+    console.log("Mongodb connection has been made");
+}).on('error', function(error){
+    console.log("The error is : ", error);
+});
+
 app.use(bodyParser.urlencoded({extenden : true}));
 app.set("view engine", "ejs");
 
