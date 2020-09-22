@@ -1,0 +1,43 @@
+*, 
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Josefin Sans;
+    font-weight: 600;
+    background-color: #93E2D5;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: black;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: teal;
+}
+
+.bg-custom {
+    background-color: #000000;
+}
+
+.navbar-brand {
+    font-family: Dancing Script;
+    font-weight: 700;
+}
+
+a {
+    color: #000000;
+}
+
+a:hover {
+    color: #004c66;
+    opacity: 0.7;
+}

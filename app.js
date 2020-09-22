@@ -8,12 +8,8 @@ var posts = [
     {name: "Icy Mountains", image: "https://images.unsplash.com/photo-1579377204611-a99b7d1263a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
     {name: "Two Days In Amsterdam", image: "https://images.unsplash.com/photo-1561330099-cddf2a366667?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
     {name: "Prague - Gorgeous & Well-Preserved", image: "https://images.unsplash.com/photo-1541849546-216549ae216d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
-    {name: "Icy Mountains", image: "https://images.unsplash.com/photo-1579377204611-a99b7d1263a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
-    {name: "Two Days In Amsterdam", image: "https://images.unsplash.com/photo-1561330099-cddf2a366667?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
-    {name: "Prague - Gorgeous & Well Preserved", image: "https://images.unsplash.com/photo-1541849546-216549ae216d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
-    {name: "Icy Mountains", image: "https://images.unsplash.com/photo-1579377204611-a99b7d1263a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
-    {name: "Two Days In Amsterdam", image: "https://images.unsplash.com/photo-1561330099-cddf2a366667?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
-    {name: "Prague - Gorgeous & Well-Preserved", image: "https://images.unsplash.com/photo-1541849546-216549ae216d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"}
+    {name: "A Day in Paris", image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"},
+    {name: "Derby at the Ethihad", image: "https://images.unsplash.com/photo-1555862124-94036092ab14?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"}
 ];
 
 app.use(bodyParser.urlencoded({extenden : true}));
@@ -29,11 +25,17 @@ app.get("/posts", function(req, res) {
     res.render("posts", {posts:posts});
 });
 
-app.post("/post", function(req, res) {
+app.post("/posts", function(req, res) {
     var name = req.body.name;
     var image = req.body.image;
+    var newPost = {name: name, image: image};
+    posts.push(newPost);
 
     res.redirect("/posts");
+});
+
+app.get("/posts/new", function(req, res) {
+    res.render("new");
 });
 
 app.listen(PORT, function(){
