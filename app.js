@@ -53,9 +53,9 @@ app.get("/posts", function(req, res) {
 
 // NEW - Insert new post to DB 
 app.post("/posts", function(req, res) {
-    var name = req.body.name;
-    var image = req.body.image;
-    var description = req.body.description;
+    var name = req.body.name.trim();
+    var image = req.body.image.trim();
+    var description = req.body.description.trim();
     var newPost = {name : name, image : image, description : description};
 
     Post.create(newPost, function(err,  newlyCreated){
@@ -77,6 +77,7 @@ app.get("/posts/new", function(req, res) {
 app.get("/posts/:id", function(req, res){
     Post.findById(req.params.id, function(err, foundPost){
         if (err) {
+            res.redirect("/posts");
             console.log(err);
         }
         else {
