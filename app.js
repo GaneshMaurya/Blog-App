@@ -86,6 +86,39 @@ app.get("/posts/:id", function(req, res){
     });
 });
 
+// EDIT - Shows the form for editing the post 
+app.get("/posts/:id/edit", function(req, res){
+    Post.findById(req.params.id, function(err, foundPost){
+        res.render("edit", {post: foundPost});
+    });
+});
+
+// UPDATE - Updates the post
+app.put("/posts/:id", function(req, res){
+    Post.findByIdAndUpdate(req.params.id, req.body.post, function(err, updatedPost){
+        if (err) {
+            console.log(err);
+            res.redirect("/posts");
+        }
+        else {
+            res.redirect("/posts/" + req.params.id);
+        }
+    });
+});
+
+// DELETE - Deletes the post
+app.delete("/posts/:id", function(req, res){
+    Post.findByIdAndRemove(req.params.id, function(err){
+        if (err) {
+            console.log(err);
+            res.redirect("/posts");
+        }
+        else {
+            res.redirect("/posts");
+        }
+    });
+});
+
 app.listen(PORT, function(){
     console.log("Welcome to my blog app server.");
 });

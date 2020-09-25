@@ -59,3 +59,11 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+form {
+    text-align: right;
+}
+
+a {
+    text-align: right;
+}

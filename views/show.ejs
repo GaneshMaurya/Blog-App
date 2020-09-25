@@ -9,7 +9,19 @@
             <img src="<%= post.image %>">
             <br>
             <br>
-            <p><%= post.description %></p>    
+            <p><%= post.description %></p>   
+            <br>
+            <div class="navigators">
+                <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+                    <button class="btn btn-dark">Delete</button>
+                </form>
+                <a href="/posts/<%= post._id %>/edit">
+                    <button type="button" class="btn btn-dark">Edit</button>
+                </a>
+                <a href="/posts">
+                    <button type="button" class="btn btn-dark">Go back</button>
+                </a> 
+            </div>
         </div> 
     </div>
 
